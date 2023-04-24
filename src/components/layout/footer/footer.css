@@ -1,0 +1,12 @@
+
+
+.tag_a{
+    color:  #130f40;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+}
