@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getLocalStorageValue } from '../utils/localStorage.utils';
 const api = axios.create({
-    baseURL: "https://my-zoo-server.onrender.com/animal",
+    baseURL: `process.env.REACT_APP_SERVER_URL${"/animal"}`,
     headers: { 
     "Content-Type": "application/json",
     "access-token": getLocalStorageValue("ac_token")
