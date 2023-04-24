@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getLocalStorageValue } from '../utils/localStorage.utils';
+import picRandom from '../utils/picRandom';
 const api = axios.create({
     baseURL: `https://my-zoo-server.onrender.com${"/animal"}`,
     headers: { 
@@ -22,6 +23,9 @@ const getAllAnimal = async ()=>{
 
 const createOneAnimal = async (values) => {
     try {
+        if(values.imgUrl === "") {
+            values.imgUrl = picRandom;
+        }
         const response = await api.post("/create", values);
         return response.data;
     } catch (error) {
