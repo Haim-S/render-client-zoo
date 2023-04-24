@@ -64,7 +64,7 @@ const zooSlice = createSlice({
         .addCase(createAnimal.fulfilled, (state, action)=>{
             state.error = "";
             state.status = "fulfilled";
-            state.animals = action.payload.data;
+            state.animals = action.payload;
         })
 
         .addCase(updateAnimal.pending, (state)=>{
